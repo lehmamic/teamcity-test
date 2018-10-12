@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="850cfbfa-cc5a-4507-9aea-11fd77a08a9d" type="jetbrains.git" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>https://github.com/lehmamic/teamcity-test#refs/heads/master</name>
+  <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
+  <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
+  <param name="authMethod" value="PASSWORD" />
+  <param name="branch" value="refs/heads/master" />
+  <param name="ignoreKnownHosts" value="true" />
+  <param name="secure:password" value="credentialsJSON:4f77e03b-d502-434a-b8f3-b4213f4ca03e" />
+  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="url" value="https://github.com/lehmamic/teamcity-test" />
+  <param name="useAlternates" value="true" />
+  <param name="username" value="lehmamic" />
+  <param name="usernameStyle" value="USERID" />
+</vcs-root>
+
