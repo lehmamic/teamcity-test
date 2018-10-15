@@ -1,7 +1,6 @@
 package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2018_1.*
-import jetbrains.buildServer.configs.kotlin.v2018_1.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2018_1.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2018_1.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2018_1.ui.*
@@ -16,12 +15,9 @@ changeBuildType(RelativeId("Build")) {
     }
     steps {
         insert(0) {
-            script {
-                scriptContent = """
-                    curl https://www.nuget.org/api/v2/package/GitVersion.CommandLine.DotNetCore/4.0.0 --output GitVersion.CommandLine.DotNetCore-4.0.0.nupkg -LO
-                    unzip GitVersion.CommandLine.DotNetCore-4.0.0.nupkg -d GitVersion.CommandLine.DotNetCore
-                    dotnet GitVersion.CommandLine.DotNetCore/tools/GitVersion.dll /output buildserver
-                """.trimIndent()
+            step {
+                name = "GitVersion"
+                type = "GitVersion_Linux"
             }
         }
     }
