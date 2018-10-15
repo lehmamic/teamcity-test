@@ -20,6 +20,7 @@ changeBuildType(RelativeId("Build")) {
                 scriptContent = """
                     curl https://www.nuget.org/api/v2/package/GitVersion.CommandLine.DotNetCore/4.0.0 --output GitVersion.CommandLine.DotNetCore-4.0.0.nupkg -LO
                     unzip GitVersion.CommandLine.DotNetCore-4.0.0.nupkg -d GitVersion.CommandLine.DotNetCore
+                    dotnet GitVersion.CommandLine.DotNetCore/GitVersion.dll /output buildserver
                 """.trimIndent()
             }
         }
