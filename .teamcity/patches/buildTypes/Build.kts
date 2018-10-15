@@ -18,8 +18,8 @@ changeBuildType(RelativeId("Build")) {
         insert(0) {
             script {
                 scriptContent = """
-                    curl -O https://github.com/GitTools/GitVersion/archive/v4.0.0.zip
-                    unzip v4.0.0 -d GitVersion
+                    curl https://github.com/GitTools/GitVersion/archive/v4.0.0.zip --output GitVersion.zip
+                    unzip GitVersion.zip -d GitVersion
                 """.trimIndent()
             }
         }
